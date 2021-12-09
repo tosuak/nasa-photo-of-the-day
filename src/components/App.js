@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import axios from 'axios';
 import {BASE_URL, API_KEY} from '../constants/index';
+import Nasa from "./nasa";
 import Details from './Details';
 
 function App() {
@@ -31,12 +32,7 @@ function App() {
     <div className="App">
       <h1>NASA PHOTO OF THE DAY</h1>
       {
-        nasaData.map(nasa => {
-          return <Details key={nasa.id} info={nasa} action={openDetails} />
-        })
-      }
-      {
-        currentNasaId && <Details currentNasaId={currentNasaId} close={closeDetails} />
+        currentNasaId && <Details nasaId={currentNasaId} close={closeDetails} />
       }
     </div>
   );

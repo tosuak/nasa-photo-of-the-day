@@ -36,11 +36,10 @@ export default function Details(props) {
 
 return (
       <StyledDetails className='NasaData'>
-        <h2>{details.title}</h2>
         {
           details && 
           <>
-          
+        <h2>{details.title}</h2>  
         <img src={details.url} alt='Nasa pic of the day'/>
         <h3>{details.date}</h3>
         <h4>Copyright: {details.copyright}</h4>
