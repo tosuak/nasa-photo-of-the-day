@@ -9,8 +9,8 @@ function App() {
   const [nasaData, setNasaData] = useState([]);
   const [currentNasaId, setCurrentNasaId] = useState('1');
 
-  const openDetails = id => {
-    setCurrentNasaId(id)
+  const openDetails = () => {
+    setCurrentNasaId(nasaData)
   }
 
   const closeDetails = () => {
@@ -32,7 +32,10 @@ function App() {
     <div className="App">
       <h1>NASA PHOTO OF THE DAY</h1>
       {
-        currentNasaId && <Details nasaId={currentNasaId} close={closeDetails} />
+        nasaData && <Nasa info={nasaData} open={openDetails} close={closeDetails}/>
+      }
+      {
+        currentNasaId && <Details nasaId={currentNasaId} />
       }
     </div>
   );

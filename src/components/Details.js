@@ -6,18 +6,16 @@ import "../App.css";
 import styled, { keyframes } from "styled-components";
 
 const kf = keyframes`
-  100% {
-    opacity: 1;
-    transform: scale(1) rotateZ(0);
-  }
+  0%   {left:0px; top:300px;}
+  100% {left:0px; top:0px;}
 `
 
 const StyledDetails = styled.div`
-  opacity: 0;
-  transform: scale(2) rotateZ(180deg);
-  animation: ${kf} 0.5s ease-in-out forwards;
+  position: relative;
+  animation-name: ${kf};
+  animation-duration: 1s;
   p {
-    color: ${props => props.theme.tertiaryColor};
+    color: ${props => props.theme.primaryColorTwo};
   }
   h2 {
     color: ${props => props.theme.primaryColor};
@@ -25,7 +23,7 @@ const StyledDetails = styled.div`
 `
 
 export default function Details(props) {
-  const { nasaId, close } = props
+  const { nasaId } = props
   const [details, setDetails] = useState(null)
 
   useEffect(() => {
@@ -46,7 +44,6 @@ return (
         <p>{details.explanation}</p>
         </>
       }
-      <button onClick={close}>Close</button>
       </StyledDetails>
 )
 };

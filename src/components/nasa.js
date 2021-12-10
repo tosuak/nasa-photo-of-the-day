@@ -12,11 +12,7 @@ const kf = keyframes `
 `
 
 const StyledFriend = styled.div `
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
   padding: 8px;
-  border-bottom: 2px solid white;
   background-color: ${pr => pr.theme.primaryColor};
   color: ${pr => pr.theme.white};
 
@@ -27,16 +23,13 @@ const StyledFriend = styled.div `
   }
 
 
-  &:before {
-    content: "${pr => pr.besty ? '💚' : '😀'}"
-  }
 
   transform: scale(2);
   opacity: 0;
   animation: ${kf} 0.3s ease-in-out forwards;
 
   button {
-    background-color: ${pr => pr.theme.tertiaryColor};
+    background-color: ${pr => pr.theme.secondaryColor};
   }
 
   &:hover {
@@ -44,14 +37,12 @@ const StyledFriend = styled.div `
   }
 `
 
-export default function Nasa({ info, action }) {
+export default function Nasa({ info, open, close }) {
 
     return (
         <StyledFriend>
-            {info}
-            <button onClick={() => action(info.id)}>
-                Click Here
-            </button>
+            <button onClick={() => close()}>Close</button>
+            <button onClick={() => open()}>Open</button>
         </StyledFriend>
     )
 }
