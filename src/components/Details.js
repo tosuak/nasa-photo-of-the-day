@@ -11,6 +11,8 @@ const kf = keyframes`
 `
 
 const StyledDetails = styled.div`
+margin: 0%;
+  height: 100%;
   position: relative;
   animation-name: ${kf};
   animation-duration: 1s;
@@ -22,11 +24,13 @@ const StyledDetails = styled.div`
   h2 {
     background-color: ${props => props.theme.secondaryColorTwo};
     color: ${props => props.theme.primaryColor};
+    font-weight: bold;
     font-size: 4rem;
-    padding: 15px;
+    padding: 35px 0;
+    border-radius: 15px;
   }
   img {
-    width: 75%;
+    width: 50%;
     border-radius: 50px;
     background-color: ${props => props.theme.primaryColorTwo};
   }

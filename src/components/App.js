@@ -7,9 +7,12 @@ import Details from './Details';
 import styled from "styled-components";
 
 const StyledApp = styled.div`
+margin: 0%;
 background-color: ${props => props.theme.primaryColor};
 height: 100%;
 h1 {
+  border-radius: 50px;
+  background-color: ${props => props.theme.tertiaryColor};
   color: ${props => props.theme.secondaryColor};
 }
 `

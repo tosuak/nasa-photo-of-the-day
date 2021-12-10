@@ -3,6 +3,7 @@ import styled,{ keyframes } from "styled-components";
 
 
 const StyledNasa = styled.div `
+margin: 0%;
   button {
     background-color: ${pr => pr.theme.primaryColorTwo};
     color:  ${pr => pr.theme.tertiaryColor};
