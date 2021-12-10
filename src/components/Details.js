@@ -6,19 +6,29 @@ import "../App.css";
 import styled, { keyframes } from "styled-components";
 
 const kf = keyframes`
-  0%   {left:0px; top:300px;}
-  100% {left:0px; top:0px;}
+  0%   {left:0px; top:200px;}
+  50% {left:0px; top:0px;}
 `
 
 const StyledDetails = styled.div`
   position: relative;
   animation-name: ${kf};
   animation-duration: 1s;
-  p {
-    color: ${props => props.theme.primaryColorTwo};
+  p, h3, h4 {
+    color: ${props => props.theme.secondaryColorTwo};
+    font-weight: 500;
+    font-size: 1.2rem;
   }
   h2 {
+    background-color: ${props => props.theme.secondaryColorTwo};
     color: ${props => props.theme.primaryColor};
+    font-size: 4rem;
+    padding: 15px;
+  }
+  img {
+    width: 75%;
+    border-radius: 50px;
+    background-color: ${props => props.theme.primaryColorTwo};
   }
 `
 

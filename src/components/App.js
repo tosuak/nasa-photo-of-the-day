@@ -4,6 +4,15 @@ import axios from 'axios';
 import {BASE_URL, API_KEY} from '../constants/index';
 import Nasa from "./nasa";
 import Details from './Details';
+import styled from "styled-components";
+
+const StyledApp = styled.div`
+background-color: ${props => props.theme.primaryColor};
+height: 100%;
+h1 {
+  color: ${props => props.theme.secondaryColor};
+}
+`
 
 function App() {
   const [nasaData, setNasaData] = useState([]);
@@ -29,15 +38,15 @@ function App() {
   },[])
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <h1>NASA PHOTO OF THE DAY</h1>
-      {
-        nasaData && <Nasa info={nasaData} open={openDetails} close={closeDetails}/>
-      }
       {
         currentNasaId && <Details nasaId={currentNasaId} />
       }
-    </div>
+      {
+        nasaData && <Nasa info={nasaData} open={openDetails} close={closeDetails}/>
+      }
+    </StyledApp>
   );
 }
 
